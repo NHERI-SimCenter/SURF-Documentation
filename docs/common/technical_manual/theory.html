@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>1. Theory and Implementation</title>
+    
+      <link rel="stylesheet" href="../../_static/pygments.css">
+      <link rel="stylesheet" href="../../_static/theme.css">
+      <link rel="stylesheet" href="../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/custom.js"></script>
+        <script type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      
+      <script src="../../_static/theme-vendors.js"></script>
+      <script src="../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../genindex.html" />
+  <link rel="search" title="Search" href="../../search.html" />
+  <link rel="next" title="2. Verification and Validation" href="vnv.html" />
+  <link rel="prev" title="4. Bugs &amp; Feauture Requests" href="../user_manual/bugs.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../index.html" class="home-link">
+    
+      <img class="logo" src="../../_static/SimCenter_SURF_logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="../../index.html#what-is-appname"
+         class="nav-link ">
+         User Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#what-is-appname"
+         class="nav-link  router-link-active">
+         Technical Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#what-is-appname"
+         class="nav-link ">
+         Developer Manual
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="../../index.html#what-is-appname"
+         class="nav-link ">
+         User Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#what-is-appname"
+         class="nav-link  router-link-active">
+         Technical Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../index.html#what-is-appname"
+         class="nav-link ">
+         Developer Manual
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../index.html#what-is-appname">User Manual</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../license.html" class="reference internal ">Copyright and license</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../user_manual/installation/installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../user_manual/usage/tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../user_manual/bugs.html" class="reference internal ">Bugs & Feauture Requests</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../index.html#what-is-appname">Technical Manual</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Theory and Implementation</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#random-field" class="reference internal">Random field</a></li>
+                
+                  <li class="toctree-l2"><a href="#neural-network" class="reference internal">Neural Network</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="vnv.html" class="reference internal ">Verification and Validation</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../index.html#what-is-appname">Developer Manual</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../developer_manual/how_to_extend/how_to_extend.html" class="reference internal ">How to Extend</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../developer_manual/coding_style/coding_style.html" class="reference internal ">Coding Style</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+          
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">1. </span>Theory and Implementation</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="../user_manual/bugs.html"
+       title="previous chapter">← <span class="section-number">4. </span>Bugs &amp; Feauture Requests</a>
+  </li>
+  <li class="next">
+    <a href="vnv.html"
+       title="next chapter"><span class="section-number">2. </span>Verification and Validation →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="theory-and-implementation">
+<h1><span class="section-number">1. </span>Theory and Implementation<a class="headerlink" href="#theory-and-implementation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="random-field">
+<h2><span class="section-number">1.1. </span>Random field<a class="headerlink" href="#random-field" title="Permalink to this headline">¶</a></h2>
+<p>Gaussian processes have a long history in the statistics community.
+They have been particularly well developed in the image signal processing community under the name random field,
+and in the geostatistics community under the name of kriging
+, which is a generic name used by geostatisticians for a family of generalized least-squares regression algorithms
+in recognition of the pioneering work of a mining engineer Danie Krige <a class="bibtex reference internal" href="#krige-1951" id="id1">[Kri51]</a>
+All kriging estimators are but variants of the basic linear regression estimator <a class="bibtex reference internal" href="#goovaerts-1997" id="id2">[Goo97]</a>.
+For instance, a simple kriging estimator can be defined as</p>
+<div class="math notranslate nohighlight" id="equation-eq-estimatorsk">
+<span class="eqno">(1.1.1)<a class="headerlink" href="#equation-eq-estimatorsk" title="Permalink to this equation">¶</a></span>\[Z^*({u_\alpha}) = \phi_0 + \boldsymbol{\phi}^T\boldsymbol{Z}(\boldsymbol{u})\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\phi_0\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{\phi}\)</span> are combining coefficients;
+<span class="math notranslate nohighlight">\(\boldsymbol{Z}(\boldsymbol{u})\)</span> is the measured expected values at location <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span>.
+If <span class="math notranslate nohighlight">\(\boldsymbol{Z}(\boldsymbol{u})\)</span> is second order stationary
+(i.e., invariant and known expected value exists, noted as <span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>),
+the observed values at location <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> could be expressed as</p>
+<div class="math notranslate nohighlight" id="equation-eq-u-alpha">
+<span class="eqno">(1.1.2)<a class="headerlink" href="#equation-eq-u-alpha" title="Permalink to this equation">¶</a></span>\[\boldsymbol{Z}(\boldsymbol{u}) = \boldsymbol{\mu}+\boldsymbol{\epsilon}(\boldsymbol{u})\]</div>
+<p>where <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}(\boldsymbol{u})\)</span> is the error vector with zero mean;
+<span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span> is the invariant and known mean value of this random field.
+Hence the unobserved value at location <span class="math notranslate nohighlight">\({u}_\alpha\)</span> is</p>
+<div class="math notranslate nohighlight" id="equation-eq-u-alpha-2">
+<span class="eqno">(1.1.3)<a class="headerlink" href="#equation-eq-u-alpha-2" title="Permalink to this equation">¶</a></span>\[{Z}({u}_\alpha) = {\mu}+{\epsilon}({u}_\alpha)\]</div>
+<p>Simple kriging estimator should be unbiased:</p>
+<div class="math notranslate nohighlight" id="equation-eq-simple-kriging">
+<span class="eqno">(1.1.4)<a class="headerlink" href="#equation-eq-simple-kriging" title="Permalink to this equation">¶</a></span>\[E[Z^*({u_\alpha})-{Z}({u}_\alpha)] = E[\phi_0
++ \boldsymbol{\phi}^T\boldsymbol{Z}(\boldsymbol{u})-{\mu}-{\epsilon}({u}_\alpha)]
+=\phi_0+\boldsymbol{\phi}^T\boldsymbol{u}-\mu=0\]</div>
+<p>This yields</p>
+<div class="math notranslate nohighlight" id="equation-eq-w0">
+<span class="eqno">(1.1.5)<a class="headerlink" href="#equation-eq-w0" title="Permalink to this equation">¶</a></span>\[\phi_0=\mu - \boldsymbol{\phi}^T\boldsymbol{u}\]</div>
+<p>Plug <a class="reference internal" href="#equation-eq-w0">(1.1.5)</a> into <a class="reference internal" href="#equation-eq-estimatorsk">(1.1.1)</a> so that the estimator becomes</p>
+<div class="math notranslate nohighlight" id="equation-eq-estimatorsk-new">
+<span class="eqno">(1.1.6)<a class="headerlink" href="#equation-eq-estimatorsk-new" title="Permalink to this equation">¶</a></span>\[Z^*({u_\alpha}) = \mu+ \boldsymbol{\phi}^T  (  \boldsymbol{Z}(\boldsymbol{u})-\boldsymbol{\mu} )
+=\mu+\boldsymbol{\phi}^T\boldsymbol{\epsilon}(\boldsymbol{u})\]</div>
+<p>Therefore the variance of the predicted values is</p>
+<div class="math notranslate nohighlight" id="equation-eq-var-z">
+<span class="eqno">(1.1.7)<a class="headerlink" href="#equation-eq-var-z" title="Permalink to this equation">¶</a></span>\[\begin{split}\rm{Var}\{ Z^*({u_\alpha}) - Z({u_\alpha})\}
+&amp;=E[\mu+\boldsymbol{\phi}^T\boldsymbol{\epsilon}(\boldsymbol{u})-{\mu}-{\epsilon}({u}_\alpha)]^2  \\
+&amp;=E[\boldsymbol{\phi}^T\boldsymbol{\epsilon}(\boldsymbol{u})-{\epsilon}({u}_\alpha)]^2  \\
+&amp;=\rm{Var}\{\boldsymbol{\phi}^T\boldsymbol{\epsilon}(\boldsymbol{u}) \}
++\rm{Var}\{ {\epsilon}({u}_\alpha) \}-2\rm{COV}\{\boldsymbol{\phi}^T\boldsymbol{\epsilon}(\boldsymbol{u}),{\epsilon}({u}_\alpha) \} \\
+&amp;=\boldsymbol{\phi}^T\Sigma_{\boldsymbol{u},\boldsymbol{u}}\boldsymbol{\phi} + \rm{Var}\{\boldsymbol{Z}(\boldsymbol{u})\} -2\boldsymbol{\phi}^T \Sigma_{\boldsymbol{u},\alpha} \\\end{split}\]</div>
+<p>To optimize <span class="math notranslate nohighlight">\(\rm{Var}\{ Z^*({u_\alpha}) - Z({u_\alpha})\}\)</span>,
+let its partial derivatives with respect to the vector of coefficients <span class="math notranslate nohighlight">\(\boldsymbol{\phi}\)</span> equate to zero</p>
+<div class="math notranslate nohighlight" id="equation-eq-var-z-partial">
+<span class="eqno">(1.1.8)<a class="headerlink" href="#equation-eq-var-z-partial" title="Permalink to this equation">¶</a></span>\[\frac{\partial \left( \boldsymbol{\phi}^T\Sigma_{\boldsymbol{u},\boldsymbol{u}}\boldsymbol{\phi}
++ \rm{Var}\{\boldsymbol{Z}(\boldsymbol{u})\} -2\boldsymbol{\phi}^T \Sigma_{\boldsymbol{u},\alpha} \right)}{\partial \boldsymbol{\phi}}
+=2\Sigma_{\boldsymbol{u},\boldsymbol{u}}\boldsymbol{\phi}-2\Sigma_{\boldsymbol{u},\alpha}=0\]</div>
+<p>Hence</p>
+<div class="math notranslate nohighlight" id="equation-eq-phi">
+<span class="eqno">(1.1.9)<a class="headerlink" href="#equation-eq-phi" title="Permalink to this equation">¶</a></span>\[\boldsymbol{\phi}=\Sigma_{\boldsymbol{u},\boldsymbol{u}}^{-1}\Sigma_{\boldsymbol{u},\alpha}\]</div>
+<p>Plug ref{eq:phi} into ref{eq:estimatorSk_new} to obtained the simple kriging predictor</p>
+<div class="math notranslate nohighlight" id="equation-eq-sk-estimator">
+<span class="eqno">(1.1.10)<a class="headerlink" href="#equation-eq-sk-estimator" title="Permalink to this equation">¶</a></span>\[Z^*({u_\alpha}) =
+\mu+{\Sigma_{\boldsymbol{u},\alpha}}^T\Sigma_{\boldsymbol{u},\boldsymbol{u}}^{-1}
+[\boldsymbol{Z}(\boldsymbol{u})-\boldsymbol{\mu}]\]</div>
+<p>and the simple kriging variance is obtained as</p>
+<div class="math notranslate nohighlight" id="equation-eq-sk-variance">
+<span class="eqno">(1.1.11)<a class="headerlink" href="#equation-eq-sk-variance" title="Permalink to this equation">¶</a></span>\[\begin{split}\rm{Var}\{ Z^*({u_\alpha}) - Z({u_\alpha})\}
+&amp;=\boldsymbol{\phi}^T\Sigma_{\boldsymbol{u},\boldsymbol{u}}\boldsymbol{\phi} + \rm{Var}\{\boldsymbol{Z}(\boldsymbol{u})\} -2\boldsymbol{\phi}^T \Sigma_{\boldsymbol{u},\alpha} \\
+&amp;=\boldsymbol{\phi}^T \Sigma_{\boldsymbol{u},\alpha} + \rm{Var}\{\boldsymbol{Z}(\boldsymbol{u})\} -2\boldsymbol{\phi}^T \Sigma_{\boldsymbol{u},\alpha}\\
+&amp;=\rm{Var}\{\boldsymbol{Z}(\boldsymbol{u})\}-\Sigma_{\boldsymbol{u},\alpha}^T
+\Sigma_{\boldsymbol{u},\boldsymbol{u}}^{-1}
+\Sigma_{\boldsymbol{u},\alpha}\end{split}\]</div>
+</div>
+<div class="section" id="neural-network">
+<h2><span class="section-number">1.2. </span>Neural Network<a class="headerlink" href="#neural-network" title="Permalink to this headline">¶</a></h2>
+<p>Artificial neural networks (ANNs) are a form of artificial intelligence which attempt to mimic the behavior of the human brain and nervous system.  Many researchers have described the structure and operation of ANNs
+(e.g. <a class="bibtex reference internal" href="#hecht-1990" id="id3">[HechtNielsenR90]</a>; <a class="bibtex reference internal" href="#zurada-1992" id="id4">[Zur92]</a>; <a class="bibtex reference internal" href="#fausett-1994" id="id5">[Fau94]</a>). A typical structure of ANNs consists of a number of nodes (processing elements), that are usually arranged in layers: an input layer,
+an output layer and one or more hidden layers (<a class="reference internal" href="#fig-ann"><span class="std std-numref">Fig. 1.2.1</span></a>).
+The input from each node in the previous layer (<span class="math notranslate nohighlight">\(x_i\)</span>) is multiplied by an adjustable connection weight (<span class="math notranslate nohighlight">\(w_{ji}\)</span>). At each node, the weighted input signals are summed and a threshold value (<span class="math notranslate nohighlight">\(\theta_j\)</span>) is added. This combined input
+(<span class="math notranslate nohighlight">\(I_j\)</span>) is then passed through a non-linear transfer function (f(.)) to produce the output of the PE (<span class="math notranslate nohighlight">\(y_i\)</span>).
+The output of one PE provides the input to the nodes in the next layer. This process is summarized in <a class="reference internal" href="#equation-eq-pro-ann1">(1.2.1)</a> and <a class="reference internal" href="#equation-eq-pro-ann2">(1.2.2)</a> and illustrated in <a class="reference internal" href="#fig-ann"><span class="std std-numref">Fig. 1.2.1</span></a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-pro-ann1">
+<span class="eqno">(1.2.1)<a class="headerlink" href="#equation-eq-pro-ann1" title="Permalink to this equation">¶</a></span>\[I_j=\sum w_{ji} x_i + \theta_j\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-pro-ann2">
+<span class="eqno">(1.2.2)<a class="headerlink" href="#equation-eq-pro-ann2" title="Permalink to this equation">¶</a></span>\[y_j = f(I_j)\]</div>
+<div class="align-center figure" id="id27">
+<span id="fig-ann"></span><img alt="../../_images/ANN.png" src="../../_images/ANN.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2.1 </span><span class="caption-text">Artificial neural network structure</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>The ANN modelling philosophy is similar to a number of conventional statistical models in the sense that both are attempting to capture the relationship between a historical set of model inputs and corresponding outputs. ANNs learn from data examples presented to them and use these data to adjust their weights in an attempt to capture the relationship between the model input variables and the corresponding outputs. Consequently, ANNs do not need any prior knowledge about the nature of the relationship between the input/output variables,
+which is one of the benefits that ANNs have compared with most empirical and statistical methods.</p>
+<p>ANNs have been applied in a great deal of research for a variety of purposes including medicine and biology (<a class="bibtex reference internal" href="#malmgren-etal-2012" id="id6">[MBN12]</a>;
+<a class="bibtex reference internal" href="#jayalakshmi-santhakumaran-2011" id="id7">[JS11]</a>); pattern recognition and image analysis (<a class="bibtex reference internal" href="#bishop-1995" id="id8">[Bis95]</a>; <a class="bibtex reference internal" href="#yang-etal-2000" id="id9">[YPL+00]</a>; <a class="bibtex reference internal" href="#amini-2008" id="id10">[Ami08]</a>);
+geotechnical engineering (<a class="bibtex reference internal" href="#shahin-etal-2008" id="id11">[SJM08]</a>);
+decision making and control (<a class="bibtex reference internal" href="#johnson-rogers-1998" id="id12">[JR98]</a>; <a class="bibtex reference internal" href="#lou-brunn-1998" id="id13">[LB98]</a>; <a class="bibtex reference internal" href="#yanar-2007" id="id14">[YAkyure07]</a>; <a class="bibtex reference internal" href="#zemouri-etal-2010" id="id15">[ZGP10]</a>);
+and stock market predictions (<a class="bibtex reference internal" href="#dechpichai-2010" id="id16">[Dec10]</a>) despite the disadvantages such as the black box nature and the
+empirical nature of model development (<a class="bibtex reference internal" href="#tu-1996" id="id17">[Tu96]</a>).</p>
+<p>ANNs are also widely used in spatial analysis and predictions of geotechnical and other engineering problems.
+<a class="bibtex reference internal" href="#sitharam-etal-2008" id="id18">[SSA08]</a> used ANN to evaluate the spatial variability of rock depth in an extended region.
+<a class="bibtex reference internal" href="#prasomphan-mase-2013" id="id19">[PM13]</a> develop a scheme to generate prediction map for geostatistical data using ANN. When integrated with GIS geographic information system (GIS), ANN is a very powerful tool to make spatial analysis.
+For example, <a class="bibtex reference internal" href="#lee-etal-2003" id="id20">[LRMW03]</a> integrated  with ANN to predict the regional landslide susceptibility. More works relating to ANN-GIS can be found
+in <a class="bibtex reference internal" href="#gangopadhyay-etal-1999" id="id21">[GGG99]</a> <a class="bibtex reference internal" href="#yanar-2007" id="id22">[YAkyure07]</a> <a class="bibtex reference internal" href="#vanleeuwen-etal-2008" id="id23">[VLTSzatmari08]</a>, etc.</p>
+<p>Spatial predictions with geostatistic tools (such as kriging methods) usually need a prescribed spatial correlation structure,
+which should be inferred from measured data.
+This is impossible when the size of the database is small.
+One advantage of ANNs is that such a prescribed correlation structure is not needed.
+Geostatistic tools, however, are still a good and widely used method for they are able to yield relatively precise and
+spatially smooth predictions. Efforts to combine ANNs with traditional geostatistic tools have been made and can be found
+in literature <a class="bibtex reference internal" href="#rizzo-dougherty-1994" id="id24">[RD94]</a>, <a class="bibtex reference internal" href="#demyanov-etal-1998" id="id25">[DKC+98]</a> and <a class="bibtex reference internal" href="#liu-etal-2009" id="id26">[LHZ09]</a>.</p>
+<p id="bibtex-bibliography-common/technical_manual/theory-0"><table class="bibtex docutils citation" frame="void" id="amini-2008" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[Ami08]</a></td><td>J&nbsp;Amini. Optimum learning rate in back-propagation neural network for classification of satellite images (IRS-1D). <em>Scientia Iranica</em>, 15(6):558–567, 2008.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="bishop-1995" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[Bis95]</a></td><td>Christopher&nbsp;M Bishop. <em>Neural networks for pattern recognition</em>. Oxford University Press, 1995.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="dechpichai-2010" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id16">[Dec10]</a></td><td>Porntip Dechpichai. <em>Nonlinear neural network for conditional mean and variance forecasts</em>. PhD thesis, University of Wollongong, New Zealand, 9 2010.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="demyanov-etal-1998" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id25">[DKC+98]</a></td><td>V&nbsp;Demyanov, M&nbsp;Kanevsky, S&nbsp;Chernov, E&nbsp;Savelieva, and V&nbsp;Timonin. Neural network residual kriging application for climatic data. <em>Journal of Geographic Information and Decision Analysis</em>, 2(2):215–232, 1998.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="fausett-1994" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[Fau94]</a></td><td>L.&nbsp;Fausett. <em>Fundamentals of neural networks: architectures, algorithms, and applications</em>. Prentice-Hall International, 1994.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="gangopadhyay-etal-1999" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id21">[GGG99]</a></td><td>Subhrendu Gangopadhyay, Tirtha&nbsp;Raj Gautam, and Ashim&nbsp;Das Gupta. Subsurface characterization using artificial neural network and gis. <em>Journal of Computing in Civil Engineering</em>, 13(3):153–161, 1999.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="goovaerts-1997" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[Goo97]</a></td><td>P.&nbsp;Goovaerts. <em>Geostatistics for natural resources evaluation</em>. Oxford University Press, 1997.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="jayalakshmi-santhakumaran-2011" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[JS11]</a></td><td>T&nbsp;Jayalakshmi and A&nbsp;Santhakumaran. Statistical normalization and back propagationfor classification. <em>International Journal of Computer Theory and Engineering</em>, 3(1):89, 2011.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="johnson-rogers-1998" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[JR98]</a></td><td>VM&nbsp;Johnson and LL&nbsp;Rogers. Using artificial neural networks and the genetic algorithm to optimize well field design: phase i final report. <em>Lawrence Livermore National Laboratory, Livermore</em>, 1998.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="krige-1951" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Kri51]</a></td><td>D.&nbsp;G. Krige. <em>A statistical approach to some mine valuation and allied problems on the Witwatersrand</em>. J Chem Metall Min Soc S Afr, 1951.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="lee-etal-2003" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id20">[LRMW03]</a></td><td>Saro Lee, Joo-Hyung Ryu, Kyungduck Min, and Joong-Sun Won. Landslide susceptibility analysis using gis and artificial neural network. <em>Earth Surface Processes and Landforms</em>, 28(12):1361–1376, 2003.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="liu-etal-2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id26">[LHZ09]</a></td><td>Fucheng Liu, Xuezhao He, and Li&nbsp;Zhou. Application of generalized regression neural network residual kriging for terrain surface interpolation. In <em>International Symposium on Spatial Analysis, Spatial-temporal Data Modeling, and Data Mining</em>, 74925F–74925F. International Society for Optics and Photonics, 2009.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="lou-brunn-1998" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id13">[LB98]</a></td><td>YF&nbsp;Lou and P&nbsp;Brunn. An offset error compensation method for improving ann accuracy when used for position control of precision machinery. <em>Neural Computing &amp; Applications</em>, 7(1):90–95, 1998.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="malmgren-etal-2012" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[MBN12]</a></td><td>Helge Malmgren, Magnus Borga, and Lars Niklasson. <em>Artificial Neural Networks in Medicine and Biology: Proceedings of the ANNIMAB-1 Conference, Göteborg, Sweden, 13–16 May 2000</em>. Springer Science &amp; Business Media, 2012.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="prasomphan-mase-2013" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id19">[PM13]</a></td><td>Sathit Prasomphan and Shigeru Mase. Generating prediction map for geostatistical data based on an adaptive neural network using only nearest neighbors. <em>International Journal of Machine Learning and Computing</em>, 3(1):98, 2013.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="rizzo-dougherty-1994" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id24">[RD94]</a></td><td>Donna&nbsp;M Rizzo and David&nbsp;E Dougherty. Characterization of aquifer properties using artificial neural networks: neural kriging. <em>Water Resources Research</em>, 30(2):483–497, 1994.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="shahin-etal-2008" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[SJM08]</a></td><td>Mohamed&nbsp;A Shahin, Mark&nbsp;B Jaksa, and Holger&nbsp;R Maier. State of the art of artificial neural networks in geotechnical engineering. <em>Electronic Journal of Geotechnical Engineering</em>, 8:1–26, 2008.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="sitharam-etal-2008" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id18">[SSA08]</a></td><td>TG&nbsp;Sitharam, Pijush Samui, and P&nbsp;Anbazhagan. Spatial variability of rock depth in bangalore using geostatistical, neural network and support vector machine models. <em>Geotechnical and Geological Engineering</em>, 26(5):503–517, 2008.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="tu-1996" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id17">[Tu96]</a></td><td>Jack&nbsp;V Tu. Advantages and disadvantages of using artificial neural networks versus logistic regression for predicting medical outcomes. <em>Journal of Clinical Epidemiology</em>, 49(11):1225–1231, 1996.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="vanleeuwen-etal-2008" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id23">[VLTSzatmari08]</a></td><td>B&nbsp;Van&nbsp;Leeuwen, Z&nbsp;Tobak, and J&nbsp;Szatmári. Development of an integrated ann—gis framework for inland excess water monitoring. <em>Journal of Environmental Geography</em>, 1:1–6, 2008.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="yanar-2007" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[YAkyure07]</td><td><em>(<a class="fn-backref" href="#id14">1</a>, <a class="fn-backref" href="#id22">2</a>)</em> TA&nbsp;Yanar and Z&nbsp;Akyüre. Artificial neural networks as a tool for site selection within GIS. <em>Geodetic and Geographic Information Technologies, Natural and Applied Sciences</em>, 2007.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="yang-etal-2000" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[YPL+00]</a></td><td>C.&nbsp;C. Yang, S.&nbsp;O. Prasher, J.&nbsp;A. Landry, H.&nbsp;S. Ramaswam, and A.&nbsp;Ditommaso. Recognition and classification of crop and weeds. <em>Canadian Agricultural Engineering</em>, 2000.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="zemouri-etal-2010" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id15">[ZGP10]</a></td><td>Ryad Zemouri, Rafael Gouriveau, and Paul&nbsp;Ciprian Patic. Improving the prediction accuracy of recurrent neural network by a pid controller. <em>International Journal of Systems Applications, Engineering &amp; Development.</em>, 4(2):19–34, 2010.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="zurada-1992" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[Zur92]</a></td><td>J.&nbsp;M. Zurada. <em>Introduction to artificial neural systems</em>. Volume&nbsp;8. West Publishing Company St. Paul, 1992.</td></tr>
+</tbody>
+</table>
+<table class="bibtex docutils citation" frame="void" id="hecht-1990" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[HechtNielsenR90]</a></td><td>Hecht-Nielsen, R. Neurocomputing. 1990.</td></tr>
+</tbody>
+</table>
+</p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="../user_manual/bugs.html"
+       title="previous chapter">← <span class="section-number">4. </span>Bugs &amp; Feauture Requests</a>
+  </li>
+  <li class="next">
+    <a href="vnv.html"
+       title="next chapter"><span class="section-number">2. </span>Verification and Validation →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, NHERI SimCenter.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+
+</div>
+
+
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Spatial Uncertainty Research Framework</title>
+    
+      <link rel="stylesheet" href="_static/pygments.css">
+      <link rel="stylesheet" href="_static/theme.css">
+      <link rel="stylesheet" href="_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/custom.js"></script>
+        <script type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      
+      <script src="_static/theme-vendors.js"></script>
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="next" title="1. Copyright and license" href="common/license.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="#" class="home-link">
+    
+      <img class="logo" src="_static/SimCenter_SURF_logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="#what-is-appname"
+         class="nav-link ">
+         User Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#what-is-appname"
+         class="nav-link ">
+         Technical Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#what-is-appname"
+         class="nav-link ">
+         Developer Manual
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="#what-is-appname"
+         class="nav-link ">
+         User Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#what-is-appname"
+         class="nav-link ">
+         Technical Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="#what-is-appname"
+         class="nav-link ">
+         Developer Manual
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#what-is-appname">User Manual</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="common/license.html" class="reference internal ">Copyright and license</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="common/user_manual/installation/installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="common/user_manual/usage/tutorial.html" class="reference internal ">Tutorial</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="common/user_manual/bugs.html" class="reference internal ">Bugs & Feauture Requests</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#what-is-appname">Technical Manual</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="common/technical_manual/theory.html" class="reference internal ">Theory and Implementation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="common/technical_manual/vnv.html" class="reference internal ">Verification and Validation</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="#what-is-appname">Developer Manual</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="common/developer_manual/how_to_extend/how_to_extend.html" class="reference internal ">How to Extend</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="common/developer_manual/coding_style/coding_style.html" class="reference internal ">Coding Style</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+          
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+    
+    <li>Spatial Uncertainty Research Framework</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="next">
+    <a href="common/license.html"
+       title="next chapter"><span class="section-number">1. </span>Copyright and license →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="spatial-uncertainty-research-framework">
+<h1>Spatial Uncertainty Research Framework<a class="headerlink" href="#spatial-uncertainty-research-framework" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="_images/surf.png"><img alt="SRT" src="_images/surf.png" style="width: 700px;" /></a>
+<div class="section" id="what-is-appname">
+<h2>What is <em>SURF</em><a class="headerlink" href="#what-is-appname" title="Permalink to this headline">¶</a></h2>
+<p>Many environmental and geographical models, such as those used to understand and manage natural systems, and those used in climate studies,
+often rely on spatially distributed data as input that are known imperfectly and
+there is a lack of knowledge about the distribution pattern of the variable in a space.
+Hence spatial uncertainty occurs. Uncertainty in the input data can propagate into model predictions.</p>
+<p><em>SURF</em> is a Python package for performing spatial uncertainty analysis using random fields and machine leaning.
+The user provides a spatially scattered dataset, <em>SURF</em> learns the variation patterns in the dataset
+and predict values at locations where there are no observations.
+Using random fields, the user can specify a correlation function to guide the simulation of uncertainty propagation.
+Using neural networks, <em>SURF</em> trains itself on the known dataset and predicts missing values based on the spatial patterns it found in the data.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="common/license.html">1. Copyright and license</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/installation/installation.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">4. Bugs &amp; Feauture Requests</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound" id="lbl-technical-manual">
+<p class="caption"><span class="caption-text">Technical Manual</span><a class="headerlink" href="#lbl-technical-manual" title="Permalink to this toctree">¶</a></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/theory.html">1. Theory and Implementation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/technical_manual/vnv.html">2. Verification and Validation</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound" id="lbl-developer-manual">
+<p class="caption"><span class="caption-text">Developer Manual</span><a class="headerlink" href="#lbl-developer-manual" title="Permalink to this toctree">¶</a></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="common/developer_manual/how_to_extend/how_to_extend.html">1. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/developer_manual/coding_style/coding_style.html">2. Coding Style</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-to-cite">
+<h2>How to cite<a class="headerlink" href="#how-to-cite" title="Permalink to this headline">¶</a></h2>
+<p>Charles Wang. (2019, September 28). NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.3463676">http://doi.org/10.5281/zenodo.3463676</a></p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>The <em>SURF</em> application is distributed under the BSD 3-Clause license, see <a class="reference internal" href="common/license.html#lbl-license"><span class="std std-ref">Copyright and license</span></a> for details.</p>
+</div>
+<div class="section" id="acknowledgement">
+<h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
+<p>This material is based upon work supported by the National Science Foundation under Grant No. 1612843.
+Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do
+not necessarily reflect the views of the National Science Foundation.</p>
+</div>
+<div class="section" id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<p>Charles Wang, NHERI SimCenter, University of California, Berkeley, <a class="reference external" href="mailto:c_w&#37;&#52;&#48;berkeley&#46;edu">c_w<span>&#64;</span>berkeley<span>&#46;</span>edu</a></p>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="next">
+    <a href="common/license.html"
+       title="next chapter"><span class="section-number">1. </span>Copyright and license →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, NHERI SimCenter.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+
+</div>
+
+
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>

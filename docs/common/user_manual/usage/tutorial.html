@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>3. Tutorial</title>
+    
+      <link rel="stylesheet" href="../../../_static/pygments.css">
+      <link rel="stylesheet" href="../../../_static/theme.css">
+      <link rel="stylesheet" href="../../../_static/sphinx_press_theme.css">
+          <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+      
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+
+      <!-- sphinx script_files -->
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/custom.js"></script>
+        <script type="text/javascript" src="https://sidecar.gitter.im/dist/sidecar.v1.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+      
+      <script src="../../../_static/theme-vendors.js"></script>
+      <script src="../../../_static/theme.js" defer></script>
+    
+  <link rel="index" title="Index" href="../../../genindex.html" />
+  <link rel="search" title="Search" href="../../../search.html" />
+  <link rel="next" title="4. Bugs &amp; Feauture Requests" href="../bugs.html" />
+  <link rel="prev" title="2. Installation" href="../installation/installation.html" /> 
+  </head>
+
+  <body>
+    <div id="app" class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="../../../index.html" class="home-link">
+    
+      <img class="logo" src="../../../_static/SimCenter_SURF_logo.png" alt="doit logo"/>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+  
+    <div class="nav-item">
+      <a href="../../../index.html#what-is-appname"
+         class="nav-link  router-link-active">
+         User Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../../index.html#what-is-appname"
+         class="nav-link ">
+         Technical Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../../index.html#what-is-appname"
+         class="nav-link ">
+         Developer Manual
+      </a>
+    </div>
+  
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+  
+    <div class="nav-item">
+      <a href="../../../index.html#what-is-appname"
+         class="nav-link  router-link-active">
+         User Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../../index.html#what-is-appname"
+         class="nav-link ">
+         Technical Manual
+      </a>
+    </div>
+  
+    <div class="nav-item">
+      <a href="../../../index.html#what-is-appname"
+         class="nav-link ">
+         Developer Manual
+      </a>
+    </div>
+  
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">Quick search</span>
+    <div class="searchformwrapper">
+      <form class="search" action="../../../search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="Search" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../../index.html#what-is-appname">User Manual</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 "><a href="../../license.html" class="reference internal ">Copyright and license</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../installation/installation.html" class="reference internal ">Installation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current"><a href="#" class="reference internal current">Tutorial</a>
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#neural-network" class="reference internal">Neural network</a></li>
+                
+                  <li class="toctree-l2"><a href="#random-field" class="reference internal">Random field</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../bugs.html" class="reference internal ">Bugs & Feauture Requests</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../../index.html#what-is-appname">Technical Manual</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../../technical_manual/theory.html" class="reference internal ">Theory and Implementation</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../technical_manual/vnv.html" class="reference internal ">Verification and Validation</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="../../../index.html#what-is-appname">Developer Manual</a></span>
+      </p>
+      <ul class="">
+        
+          <li class="toctree-l1 "><a href="../../developer_manual/how_to_extend/how_to_extend.html" class="reference internal ">How to Extend</a>
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 "><a href="../../developer_manual/coding_style/coding_style.html" class="reference internal ">Coding Style</a>
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+          
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+    <li><span class="section-number">3. </span>Tutorial</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="../installation/installation.html"
+       title="previous chapter">← <span class="section-number">2. </span>Installation</a>
+  </li>
+  <li class="next">
+    <a href="../bugs.html"
+       title="next chapter"><span class="section-number">4. </span>Bugs &amp; Feauture Requests →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main">
+            
+  <div class="section" id="tutorial">
+<span id="lbl-usage"></span><h1><span class="section-number">3. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>In this section, code snippets showing how to use <em>SURF</em> are presented for quick start.
+A more detailed example can be found in <a class="reference internal" href="../../technical_manual/vnv.html#lbl-vnv"><span class="std std-ref">Verification and Validation</span></a>, in which there is a jupyter notebook that can run in Google Colab.</p>
+<div class="section" id="neural-network">
+<h2><span class="section-number">3.1. </span>Neural network<a class="headerlink" href="#neural-network" title="Permalink to this headline">¶</a></h2>
+<p>The example below shows how to train a <code class="docutils literal notranslate"><span class="pre">neural</span> <span class="pre">network</span></code> on a data set, and use it to predict.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">surf.NN</span> <span class="kn">import</span> <span class="n">SpatialNeuralNet</span>
+
+<span class="c1">#---------------------------------------</span>
+<span class="c1"># 1. Prepare your data</span>
+<span class="c1">#---------------------------------------</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load</span> <span class="n">your</span> <span class="n">data</span> <span class="n">here</span>
+<span class="c1"># data is a numpy matrix with columns: [x,y,value]</span>
+<span class="c1"># ... see SURF.ET-AI.py for an example:</span>
+<span class="c1"># https://github.com/NHERI-SimCenter/SURF/blob/master/examples/demo-NN.py</span>
+
+<span class="c1">#---------------------------------------</span>
+<span class="c1"># 2. Train the neural network</span>
+<span class="c1">#---------------------------------------</span>
+
+<span class="c1"># define a spatial neural network</span>
+<span class="c1"># numNei is the number of nearest neighbors to be considered</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">SpatialNeuralNet</span><span class="p">(</span><span class="n">rawData</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">numNei</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># create a neural network that can take information of numNei points as input</span>
+<span class="n">nn</span><span class="o">.</span><span class="n">build_model</span><span class="p">()</span>
+
+<span class="c1"># this trains the neural network on rawData</span>
+<span class="n">nn</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+
+<span class="c1">#---------------------------------------</span>
+<span class="c1"># 3. Predict</span>
+<span class="c1">#---------------------------------------</span>
+
+<span class="c1"># define a point located at (x,y)</span>
+<span class="n">unkown_point</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="c1"># predict a value at the unkown_point</span>
+<span class="n">predicted</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">unkown_point</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="random-field">
+<h2><span class="section-number">3.2. </span>Random field<a class="headerlink" href="#random-field" title="Permalink to this headline">¶</a></h2>
+<p>The example below shows how to define a <cite>spatial model</cite> for a data set, and insert it into <cite>random field</cite> to predict.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">surf.rf</span> <span class="kn">import</span> <span class="n">SK</span>
+<span class="kn">import</span> <span class="nn">surf.spatialModel</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="c1">#---------------------------------------</span>
+<span class="c1"># 1. Prepare your data</span>
+<span class="c1">#---------------------------------------</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load</span> <span class="n">your</span> <span class="n">data</span> <span class="n">here</span>
+<span class="c1"># data is a numpy matrix with columns: [x,y,value]</span>
+<span class="c1"># ... see SURF.ET.py for an example:</span>
+<span class="c1"># https://github.com/NHERI-SimCenter/SURF/blob/master/examples/demo-NN.py</span>
+
+<span class="c1">#---------------------------------------</span>
+<span class="c1"># 2. Define spatial model</span>
+<span class="c1">#---------------------------------------</span>
+
+<span class="c1"># correlation length</span>
+<span class="n">colLength</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="c1"># sill of the semivariogram</span>
+<span class="n">sill</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="c1"># cov is covariance function;</span>
+<span class="c1"># exponential means using exponential as the covariance function</span>
+<span class="n">cov</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span> <span class="n">m</span><span class="o">.</span><span class="n">exponential</span><span class="p">,</span> <span class="p">(</span> <span class="n">colLength</span><span class="p">,</span> <span class="n">sill</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="c1">#---------------------------------------</span>
+<span class="c1"># 3. Predict</span>
+<span class="c1">#---------------------------------------</span>
+
+<span class="c1"># define a point located at (x,y)</span>
+<span class="n">unkown_point</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="c1"># predict a value at the unkown_point</span>
+<span class="c1"># N is the number of nearest neighbors to depend on</span>
+<span class="n">predicted_mu</span><span class="p">,</span> <span class="n">predicted_std</span> <span class="o">=</span> <span class="n">SK</span><span class="p">(</span> <span class="n">data</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="n">unkown_point</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="../installation/installation.html"
+       title="previous chapter">← <span class="section-number">2. </span>Installation</a>
+  </li>
+  <li class="next">
+    <a href="../bugs.html"
+       title="next chapter"><span class="section-number">4. </span>Bugs &amp; Feauture Requests →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; Copyright 2020, NHERI SimCenter.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a>.
+
+</div>
+
+
+            </div>
+          </div>
+      </page>
+    </div>
+    
+    
+  </body>
+</html>
